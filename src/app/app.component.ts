@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'explain-k8s-root',
@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'explain-k8s-ui';
 }

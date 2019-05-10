@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #dcdcdc;
+}
+
+#title {
+  text-align: center;
+  font-size: 49px;
+}
+
+.center {
+  position: absolute !important;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+}
