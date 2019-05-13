@@ -1,18 +1,18 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Explanation} from '../../models/explanation.model';
-import * as $ from 'jquery';
+import {Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
+import {Explanation} from "../../models/explanation.model";
+import * as $ from "jquery";
 
 @Component({
-  selector: 'explain-k8s-explanation',
-  templateUrl: './explanation.component.html',
-  styleUrls: ['./explanation.component.scss']
+  selector: "explain-k8s-explanation",
+  templateUrl: "./explanation.component.html",
+  styleUrls: ["./explanation.component.scss"]
 })
 export class ExplanationComponent implements OnInit {
   @Input()
   public explanation!: Explanation;
 
-  @ViewChild('e')
-  public e!: ElementRef<HTMLDivElement>;
+  @ViewChild("contentWrapper")
+  public contentWrapper!: ElementRef<HTMLDivElement>;
 
   public closed: boolean = true;
 
@@ -20,7 +20,7 @@ export class ExplanationComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.close('0');
+    this.close("0");
   }
 
   public toggle(): void {
@@ -31,14 +31,14 @@ export class ExplanationComponent implements OnInit {
     }
   }
 
-  public close(speed: string = 'fast'): void {
-    $(this.e.nativeElement).slideToggle(speed, 'swing', (): void => {
+  public close(speed: string = "fast"): void {
+    $(this.contentWrapper.nativeElement).slideToggle(speed, "swing", (): void => {
       this.closed = true;
     });
   }
 
-  public open(speed: string = 'fast'): void {
+  public open(speed: string = "fast"): void {
     this.closed = false;
-    setTimeout(() => $(this.e.nativeElement).slideToggle(speed, 'swing'));
+    setTimeout(() => $(this.contentWrapper.nativeElement).slideToggle(speed, "swing"));
   }
 }

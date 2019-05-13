@@ -1,4 +1,4 @@
-import {Type} from 'class-transformer';
+import {Type} from "class-transformer";
 
 export interface IExplanation {
   name: string;
@@ -9,10 +9,10 @@ export interface IExplanation {
 }
 
 export class Explanation {
-  public name: string = '';
-  public fullName: string = '';
-  public type: string = '';
-  public description: string = '';
+  public name: string = "";
+  public fullName: string = "";
+  public type: string = "";
+  public description: string = "";
   @Type(() => Explanation)
   public fields: Array<Explanation> = [];
 

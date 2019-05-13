@@ -1,26 +1,16 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {ExplainComponent} from './explain/explain.component';
-import {HomeComponent} from './home/home.component';
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+import {ExplainComponent} from "./explain/explain.component";
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: '/home'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'explain',
+    path: "",
     component: ExplainComponent
   },
   {
-    path: '**',
-    pathMatch: 'full',
-    redirectTo: '/home'
+    path: "**",
+    pathMatch: "full",
+    redirectTo: "/"
   }
 ];
 
@@ -29,4 +19,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+  public constructor() {
+  }
 }

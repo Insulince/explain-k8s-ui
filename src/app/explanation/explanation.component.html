@@ -1,16 +1,16 @@
-<mat-card style="margin: 16px;">
-  <div (click)="toggle()">
-    <mat-card-title style="font-weight:400;">{{explanation.fullName.split(".").slice(-1)[0]}} <span style="float: right; font-weight: bold; font-size: 24px">{{closed ? "+" : "-"}}</span></mat-card-title>
+<mat-card class="card">
+  <div (click)="toggle()" class="open-close-wrapper">
+    <mat-card-title>{{explanation.name}} <span class="open-close-indicator">{{closed ? "+" : "-"}}</span></mat-card-title>
     <mat-card-subtitle>{{explanation.fullName}} - {{explanation.type}}</mat-card-subtitle>
   </div>
-  <div #e id="content-wrapper">
+  <div #contentWrapper id="content-wrapper">
     <mat-card-content>
       <p class="header">DESCRIPTION</p>
-      <p style="text-align: center">{{explanation.description}}</p>
+      <p class="description">{{explanation.description}}</p>
       <ng-container *ngIf="explanation.type.indexOf('Object') !== -1 || explanation.type.indexOf('Resource') !== -1">
         <br/>
         <p class="header">FIELDS</p>
-        <mat-card style="background-color: #dcdcdc; padding-top: 8px; padding-right: 0; padding-bottom: 8px; padding-left: 0;">
+        <mat-card class="bg-card">
           <ng-container *ngIf="!closed">
             <ng-container *ngIf="explanation.fields.length > 0">
               <ng-container *ngFor="let field of explanation.fields">
@@ -18,7 +18,7 @@
               </ng-container>
             </ng-container>
             <ng-container *ngIf="explanation.fields.length <= 0">
-              ~ {{explanation.fullName.split(".").slice(-1)[0]}} has no fields. ~
+              ~ {{explanation.name}} has no fields (this is likely erroneous data, fields containing type "Object" should have sub-fields). ~
             </ng-container>
           </ng-container>
         </mat-card>
