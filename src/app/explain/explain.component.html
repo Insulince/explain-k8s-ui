@@ -5,4 +5,7 @@
   <ng-container *ngFor="let explanation of explanations">
     <explain-k8s-explanation [explanation]="explanation"></explain-k8s-explanation>
   </ng-container>
+  <ng-container *ngIf="explanations.length == 0">
+    <p>~ Did not find any k8s explanations. Your provided json file may be invalid or empty. Make sure everything is configured correctly. ~</p>
+  </ng-container>
 </ng-container>
