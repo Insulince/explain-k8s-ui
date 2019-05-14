@@ -13,10 +13,23 @@ body {
 #title {
   text-align: center;
   font-size: 49px;
+  margin-bottom: 16px;
+}
+
+#subtitle {
+  font-size: 18px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 32px;
 }
 
 .center {
   position: absolute !important;
   top: calc(50% - 50px);
   left: calc(50% - 50px);
+}
+
+.monospace {
+  font-family: monospace;
+  font-weight: bold;
 }
