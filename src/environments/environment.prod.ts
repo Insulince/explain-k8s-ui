@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  explanationsLocation: "assets/explanations.json"
+  explanationsLocation: "/assets/explanations.json"
 };
