@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  explanationsLocation: "/assets/explanations.json"
+  explanationsLocation: "assets/explanations.json"
 };
 
 /*
